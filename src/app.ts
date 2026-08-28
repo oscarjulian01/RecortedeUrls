@@ -12,6 +12,7 @@ export function createApp(): Express {
 
   app.use(requestLogger);
   app.use(express.json());
+  app.use(express.static("public"));
   app.use("/health", healthRouter);
   app.use("/auth", authRouter);
   app.use("/urls", urlsRouter);
